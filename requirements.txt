@@ -1,0 +1,6 @@
+pytest
+click
+datetime
+questionary
+tabulate
+
