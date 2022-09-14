@@ -1,4 +1,4 @@
-from db import add_habit, get_habit_data, select_habits
+from db import add_habit
 
 
 
@@ -18,7 +18,7 @@ class Habit:
 
 
     """ 
-    Class to add habits and report on habits
+    Class to add habits to the database
 
     :param name: the name of the habit
     :param description:  the description of the habit
@@ -35,11 +35,6 @@ class Habit:
 
     ''''''
 
-    def selectallhabits(self, db):
-        select_habits(db)
-
-    def gethabitdata(self, db):
-        get_habit_data(db, self.name)
 
 
 

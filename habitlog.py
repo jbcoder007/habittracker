@@ -7,7 +7,7 @@ class Habitlog:
         """
        class to log events
 
-       :param name: name of the habot
+       :param name: name of the habit
        :param description: description of the habit
        """
         self.habitname = habitname

@@ -24,6 +24,8 @@ from tabulate import tabulate
 
 
 def switch(action):
+    """switch function to call the appropriate function based on the user's choice"""
+
     db = get_db()
 
 
@@ -55,6 +57,7 @@ def switch(action):
             """Raised when User trys to log habit to a date and time after the current date and time"""
             pass
         try:
+            """try clause to catch where No habotis have been created yet"""
             listofhabits = list_habits(db)
             listofhabits2 = str(listofhabits)[1:-1]
             listofhabits3 = listofhabits2.replace(" '", "")
@@ -62,6 +65,7 @@ def switch(action):
             if(len(listofhabits4) == 0):
                 raise Nohabitscreated
             else:
+                """steps to create a options list of all habots created in a format that questionary can use"""
                 listofhabits = list_habits(db)
                 listofhabits2 = str(listofhabits)[1:-1]
                 listofhabits3 = listofhabits2.replace(" '", "")
@@ -80,6 +84,7 @@ def switch(action):
                                            'or YYYY-MM-DD e.g. 2020-01-01 12:00:00 or just 2020-01-01',
                                            type=click.DateTime(formats=None))
                     try:
+                        """try clause to catch where the date and time entered is before the habit was created"""
                         habitcreateddatetime = get_habit_createddatetime(db, habitname)
                         habitcreateddatetime2 = str(habitcreateddatetime)[2:-3]
                         habitcreateddatetime3 = datetime.strptime(habitcreateddatetime2, '%Y-%m-%d %H:%M:%S')
@@ -116,6 +121,7 @@ def switch(action):
             """Raised when User trys to log habit without creating any habits"""
             pass
         try:
+            """try clause to catch where No habotis have been created yet"""
             listofhabits = list_habits(db)
             listofhabits2 = str(listofhabits)[1:-1]
             listofhabits3 = listofhabits2.replace(" '", "")
@@ -123,6 +129,7 @@ def switch(action):
             if(len(listofhabits4) == 0):
                 raise Nohabitscreated
             else:
+                """steps to create a options list of all habots created in a format that questionary can use"""
                 listofhabits = list_habits(db)
                 listofhabits2 = str(listofhabits)[1:-1]
                 listofhabits3 = listofhabits2.replace(" '", "")
@@ -184,6 +191,7 @@ def switch(action):
             """Raised when User trys to log habit without creating any habits"""
             pass
         try:
+            """try clause to catch where No habotis have been created yet"""
             listofhabits = list_habits(db)
             listofhabits2 = str(listofhabits)[1:-1]
             listofhabits3 = listofhabits2.replace(" '", "")
@@ -191,6 +199,7 @@ def switch(action):
             if(len(listofhabits4) == 0):
                 raise Nohabitscreated
             else:
+                """steps to create a options list of all habits created in a format that questionary can use"""
                 listofhabits = list_habits(db)
                 listofhabits2 = str(listofhabits)[1:-1]
                 listofhabits3 = listofhabits2.replace(" '", "")
@@ -231,6 +240,7 @@ def switch(action):
                 pass
 
             try:
+                """try clause to catch where No habotis have been created yet"""
                 listofhabits = list_habits(db)
                 listofhabits2 = str(listofhabits)[1:-1]
                 listofhabits3 = listofhabits2.replace(" '", "")
@@ -258,6 +268,7 @@ def switch(action):
                 pass
 
             try:
+                """try clause to catch where No habotis have been created yet"""
                 listofhabits = list_habits(db)
                 listofhabits2 = str(listofhabits)[1:-1]
                 listofhabits3 = listofhabits2.replace(" '", "")
@@ -291,6 +302,7 @@ def switch(action):
                 pass
 
             try:
+                """try clause to catch where No habotis have been logged yet"""
                 listofhabitlog = list_habitlogs(db)
                 listofhabitlog2 = str(listofhabitlog)[1:-1]
                 listofhabitlog3 = listofhabitlog2.replace(" '", "")
@@ -304,7 +316,7 @@ def switch(action):
                             raise Nostreak
                         else:
                             print(tabulate(result_allstreaks,
-                                       headers=['Habit name', 'Streak Start Date', 'Streak End Date', 'Streak Length'],
+                                       headers=['Habit name', 'Streak Count', 'Streak Start Date', 'Streak End Date'],
                                        tablefmt='psql'))
                     except Nostreak:
                         print("\n No streaks logged yet. \n")
@@ -331,6 +343,7 @@ def switch(action):
                 pass
 
             try:
+                '''try clause to catch where No habotis have been logged yet'''
                 listofhabitlog = list_habitlogs(db)
                 listofhabitlog2 = str(listofhabitlog)[1:-1]
                 listofhabitlog3 = listofhabitlog2.replace(" '", "")
@@ -338,6 +351,7 @@ def switch(action):
                 if (len(listofhabitlog4) == 0):
                     raise Nohabitslogged
                 else:
+                    '''steps to create a options list of all habits created in a format that questionary can use'''
                     listofhabits = list_habits(db)
                     listofhabits2 = str(listofhabits)[1:-1]
                     listofhabits3 = listofhabits2.replace(" '", "")
@@ -378,6 +392,7 @@ def switch(action):
                 pass
 
             try:
+                '''try clause to catch where No habotis have been logged yet'''
                 listofhabitlog = list_habitlogs(db)
                 listofhabitlog2 = str(listofhabitlog)[1:-1]
                 listofhabitlog3 = listofhabitlog2.replace(" '", "")
@@ -417,6 +432,7 @@ def switch(action):
                 pass
 
             try:
+                """try clause to catch where No habotis have been logged yet"""
                 listofhabitlog = list_habitlogs(db)
                 listofhabitlog2 = str(listofhabitlog)[1:-1]
                 listofhabitlog3 = listofhabitlog2.replace(" '", "")
@@ -424,6 +440,7 @@ def switch(action):
                 if (len(listofhabitlog4) == 0):
                     raise Nohabitslogged
                 else:
+                    """steps to create a options list of all habits created in a format that questionary can use"""
                     listofhabits = list_habits(db)
                     listofhabits2 = str(listofhabits)[1:-1]
                     listofhabits3 = listofhabits2.replace(" '", "")
@@ -466,7 +483,7 @@ def switch(action):
 
 
 
-
+"""Main function which initiates all other functions if the user confirms they are ready to start"""
 
 if click.confirm("Welcome to habitracker. THe app that helps you make and break your habits. \n"
                  "Are you ready to start?", default=True):

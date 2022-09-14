@@ -11,10 +11,12 @@ It will help you keep track of your progress and help you stay motivated.
 You can create as many habits as you want. For each habit, you will be prompted to assign a name, description,
 periodicity (daily, weekly, monthly, yearly) as well as the minimum and maximum amount of times you want a  habit to occur within a period.
 
-For each habit you create, you can edit any of its attributes using the 'Edit habit' Functionality or delete them compeletly 
+For each habit you create, you can edit any of its attributes using the 'Edit habit' functionality or delete them compeletly 
 using the 'Delete habit' functionality.
 
 THe Analyse section allows you to view all habits you have created as well as track both all streaks or the longest streak logged.
+
+The app is prepopulated with 5 habits and example data of each so you can see how it works.
 
 
 ## Installation
